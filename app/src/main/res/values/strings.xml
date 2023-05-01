@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">LoginTutorial</string>
+    <string name="register_form_title">Registre-se</string>
+    <string name="register_username_hint">Nome de usuario</string>
+    <string name="register_cellNumber_hint">Nr de celular</string>
+    <string name="register_password_hint">Senha</string>
+    <string name="register_button_text">Registrar</string>
+    <string name="login_redirect_text">Já possui uma conta? Login</string>
+    <string name="login_button_text">Login</string>
+    <string name="login_form_title">Login</string>
+</resources>
