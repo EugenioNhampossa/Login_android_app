@@ -8,4 +8,13 @@
     <string name="login_redirect_text">Já possui uma conta? Login</string>
     <string name="login_button_text">Login</string>
     <string name="login_form_title">Login</string>
+    <string name="alterar_senha">Alterar Senha</string>
+    <string name="nova_senha">Nova senha</string>
+    <string name="alterar">Alterar</string>
+    <string name="verifica_o">Verificação</string>
+    <string name="verification_message">Enviamos um código de verificação para o nr:</string>
+    <string name="number">number</string>
+    <string name="code_hint">Digite o código enviado</string>
+    <string name="verificar">Verificar</string>
+    <string name="login">Login</string>
 </resources>
