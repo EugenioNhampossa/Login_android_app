@@ -61,4 +61,31 @@ public class UserDao {
         return sb.toString();
     }
 
+    public int generateId(){
+        if(userList.isEmpty()){
+            return 1;
+        }else{
+            return userList.get(userList.size()-1).getId()+1;
+        }
+    }
+
+    public User getUserByUserName(String username){
+        for (User user: userList) {
+            if(user.getUsername().equals(username)){
+                return user;
+            }
+        }
+        return null;
+    }
+
+    public boolean resetPass(String token,String newPassword){
+        for (User user: userList) {
+            if(user.getTempToken().equals(token)){
+                user.setPassword(hashString(newPassword));
+                return true;
+            }
+        }
+        return false;
+    }
+
 }

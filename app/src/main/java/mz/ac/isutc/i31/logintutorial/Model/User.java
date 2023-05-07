@@ -1,8 +1,10 @@
 package mz.ac.isutc.i31.logintutorial.Model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class User {
+public class User implements Serializable {
+    private static final long serialVersionUID = 123L;
     private  int id;
     private String username;
     private String cellNumber;

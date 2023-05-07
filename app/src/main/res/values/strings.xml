@@ -17,4 +17,6 @@
     <string name="code_hint">Digite o código enviado</string>
     <string name="verificar">Verificar</string>
     <string name="login">Login</string>
+    <string name="register_redirect_text">Não possui uma conta? Registre-se</string>
+    <string name="register_password_conf_hint">Confirme a senha</string>
 </resources>

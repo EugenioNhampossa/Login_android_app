@@ -7,7 +7,7 @@
     android:background="@drawable/pagebkg"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".LoginActivity">
+    tools:context=".TokenVerification">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -55,7 +55,8 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:id="@+id/edit_password"
+                android:maxLength="5"
+                android:id="@+id/edit_token"
                 android:background="@drawable/custom_edittext"
                 android:layout_marginTop="40dp"
                 android:padding="8dp"
@@ -69,15 +70,18 @@
             <Button
                 android:id="@+id/bt_verify"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="45dp"
                 android:layout_marginTop="30sp"
                 android:backgroundTint="@color/lavender"
                 android:text="@string/verificar"
+                android:textColor="@color/white"
+                android:background="@drawable/custom_edittext"
                 android:textSize="18sp"
                 app:cornerRadius="20dp" />
 
             <Button
                 android:id="@+id/bt_back_login"
+                android:background="@drawable/custom_edittext"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="10sp"
