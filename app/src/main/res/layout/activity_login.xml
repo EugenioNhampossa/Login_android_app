@@ -61,11 +61,25 @@
                 android:textColor="@color/black"
                 android:importantForAutofill="no" />
 
+            <CheckBox
+                android:id="@+id/capchaCheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="@string/capcha_label" />
+
+            <TextView
+                android:id="@+id/txtMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textSize="15sp" />
+
             <Button
                 android:id="@+id/bt_login"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
-                android:layout_marginTop="30sp"
+                android:layout_marginTop="20dp"
                 android:backgroundTint="@color/lavender"
                 android:text="@string/login_button_text"
                 android:textColor="@color/white"
