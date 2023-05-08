@@ -19,4 +19,9 @@
     <string name="login">Login</string>
     <string name="register_redirect_text">Não possui uma conta? Registre-se</string>
     <string name="register_password_conf_hint">Confirme a senha</string>
+    <string name="sucesso">Sucesso</string>
+    <string name="mensagem">mensagem</string>
+    <string name="esqueceu_a_senha">Esqueceu a senha?</string>
+    <string name="username_hint">Nome de usuário</string>
+    <string name="proximo">Proximo</string>
 </resources>

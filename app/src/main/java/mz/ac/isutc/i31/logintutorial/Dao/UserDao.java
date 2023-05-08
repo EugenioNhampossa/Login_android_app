@@ -1,14 +1,21 @@
 package mz.ac.isutc.i31.logintutorial.Dao;
 
+import static android.service.controls.ControlsProviderService.TAG;
+
+import android.util.Log;
+
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 import mz.ac.isutc.i31.logintutorial.Model.User;
 
 public class UserDao {
-    private  static  ArrayList<User> userList = new ArrayList<>();
+    private  static User user1 = new User(1,"eugenio","856473627", hashString2("0000"));
+    private  static User user2 = new User(2,"milton","856344344", hashString2("0000"));
+    private static ArrayList<User> userList = new ArrayList<>(Arrays.asList(user1,user2));
 
     public ArrayList<User> getUsers(){
         return userList;
@@ -17,13 +24,31 @@ public class UserDao {
     public boolean addUser(User user){
        String hash = hashString(user.getPassword());
        if(hash!=null) {
-           return userList.add(new User(user.getId(), user.getUsername(), user.getCellNumber(), hash));
+           return userList.add(new User(user.getId(), user.getUsername().trim(), user.getCellNumber().trim(), hash));
        }else{
            return  false;
        }
     }
 
     public String hashString(String input) {
+        //return  input;
+        try {
+            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+            byte[] hash = digest.digest(input.getBytes());
+            StringBuilder hexString = new StringBuilder();
+            for (byte b : hash) {
+                String hex = Integer.toHexString(0xff & b);
+                if (hex.length() == 1) hexString.append('0');
+                hexString.append(hex);
+            }
+            return hexString.toString();
+        } catch (NoSuchAlgorithmException e) {
+            return null;
+        }
+    }
+
+    public static String hashString2(String input) {
+        //return  input;
         try {
             MessageDigest digest = MessageDigest.getInstance("SHA-256");
             byte[] hash = digest.digest(input.getBytes());
@@ -43,7 +68,7 @@ public class UserDao {
         for (User user:userList) {
             if(user.getUsername().equals(username)) {
                 String hashedPassword = hashString(password);
-                if(hashedPassword.equals(password)){
+                if(hashedPassword.equals(user.getPassword())){
                     return user;
                 }
                 return null;
@@ -78,10 +103,11 @@ public class UserDao {
         return null;
     }
 
-    public boolean resetPass(String token,String newPassword){
-        for (User user: userList) {
-            if(user.getTempToken().equals(token)){
-                user.setPassword(hashString(newPassword));
+    public boolean resetPass(User user,String newPassword){
+        for (User userInList : userList) {
+            if(userInList.getId() == user.getId()){
+                userInList.setPassword(hashString(newPassword));
+                userInList.setTempToken(null);
                 return true;
             }
         }

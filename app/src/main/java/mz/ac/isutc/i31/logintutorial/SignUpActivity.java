@@ -51,7 +51,10 @@ public class SignUpActivity extends AppCompatActivity {
                                     password.getText().toString(),
                                     userDao.generateToken()
                             );
-
+                            username.setText(null);
+                            password.setText(null);
+                            cellNumber.setText(null);
+                            passwordConfirm.setText(null);
                             intent.putExtra("operation","register");
                             intent.putExtra("user",user);
                             startActivity(intent);
