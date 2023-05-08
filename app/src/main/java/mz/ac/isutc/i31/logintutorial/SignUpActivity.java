@@ -34,6 +34,8 @@ public class SignUpActivity extends AppCompatActivity {
                     public void onClick(View view) {
                         if(username.getText().toString().isEmpty()){
                             username.setError("Insira o nome de usuário");
+                        }else if(userDao.getUserByUserName(username.getText().toString())!=null) {
+                            username.setError("Usuário já existe, escolha outro nome");
                         }else if(cellNumber.getText().toString().isEmpty()){
                             cellNumber.setError("Insira o nr de celular");
                         }else if(password.getText().toString().isEmpty()){
