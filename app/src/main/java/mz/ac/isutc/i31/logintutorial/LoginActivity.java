@@ -65,8 +65,10 @@ public class LoginActivity extends AppCompatActivity {
                             if (user != null) {
                                 username.setText(null);
                                 password.setText(null);
-                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                Intent intent = new Intent(LoginActivity.this, TokenVerification.class);
+                                user.setTempToken(userDao.generateToken());
                                 intent.putExtra("user", user);
+                                intent.putExtra("operation", "login");
                                 startActivity(intent);
                             } else {
                                 Toast.makeText(LoginActivity.this, "Credenciais inválidas!", Toast.LENGTH_SHORT).show();

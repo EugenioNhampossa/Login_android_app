@@ -62,6 +62,14 @@ public class TokenVerification extends AppCompatActivity {
                             }else{
                                 Toast.makeText(TokenVerification.this, "Código inválido", Toast.LENGTH_SHORT).show();
                             }
+                        } else if (operation.equals("login")) {
+                            if(token.equals(user.getTempToken())) {
+                                Intent intent = new Intent(TokenVerification.this,MainActivity.class);
+                                intent.putExtra("user",user);
+                                startActivity(intent);
+                            }else{
+                                Toast.makeText(TokenVerification.this, "Código inválido", Toast.LENGTH_SHORT).show();
+                            }
                         }
                     }
                 }
