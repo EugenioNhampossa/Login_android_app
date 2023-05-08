@@ -40,8 +40,14 @@ public class SignUpActivity extends AppCompatActivity {
                             password.setError("Insira a senha");
                         }else if(passwordConfirm.getText().toString().isEmpty()){
                             passwordConfirm.setError("Confirme a senha");
-                        }else if(!passwordConfirm.getText().toString().equals(password.getText().toString())){
+                        }else if(!passwordConfirm.getText().toString().equals(password.getText().toString())) {
                             passwordConfirm.setError("As senhas são diferentes");
+                        }else if(username.getText().toString().length() < 4) {
+                            username.setError("O nome deve ter pelo menos 4 caracteres");
+                        }else if(cellNumber.getText().length() < 9) {
+                            cellNumber.setError("Numero inválido");
+                        }else if(password.getText().toString().length() < 4){
+                            password.setError("A senha deve ter pelo menos 4 caracteres");
                         } else {
                             Intent intent = new Intent(SignUpActivity.this,TokenVerification.class);
                             User user = new User(
