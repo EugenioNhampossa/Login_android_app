@@ -40,6 +40,7 @@ public class LoginActivity extends AppCompatActivity {
                                 username.setText(null);
                                 password.setText(null);
                                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                intent.putExtra("user",user);
                                 startActivity(intent);
                             }else{
                                 Toast.makeText(LoginActivity.this, "Credenciais inválidas!", Toast.LENGTH_SHORT).show();

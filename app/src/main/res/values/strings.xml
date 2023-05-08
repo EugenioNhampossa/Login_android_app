@@ -24,4 +24,7 @@
     <string name="esqueceu_a_senha">Esqueceu a senha?</string>
     <string name="username_hint">Nome de usuário</string>
     <string name="proximo">Proximo</string>
+    <string name="logout_button_text">Logout</string>
+    <string name="user_label">User:</string>
+    <string name="token_label">Token:</string>
 </resources>
